@@ -1,0 +1,13 @@
+.margenes{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+@media only screen and (max-width: 767px) {
+    .margenes{
+
+        margin-left: 5%;
+        margin-right: 5%;
+    
+    }
+}
