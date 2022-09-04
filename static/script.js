@@ -4,7 +4,9 @@ create = () => {
     const form = document.getElementById('formulario');
     let entrada = {
         'nombre': form['nombre'].value,
-        'descripcion': form['descripcion'].value,
+        'email': form['email'].value,
+        'phone': form['phone'].value,
+        'genero': form['inputState'].value,
     }
     //localStorage.setItem(String(localStorage.length+1),JSON.stringify(entrada));
     guardarData(entrada)
@@ -42,7 +44,7 @@ showAll = () => {
         let datosParseados = JSON.parse(guardados);
         console.log(datosParseados);
         for (let i = 0; i < datosParseados.length; i++) {
-            document.getElementById("aca").innerHTML += "<tr id=" + i + "><th>" + String(i + 1) + "</th><td>" + datosParseados[i].nombre + "</td><td>" + datosParseados[i].descripcion + "</td><td><button id=" + i + " onclick=" + "'" + "borra(this.id)" + "'" + ">Delete</button><button>Actualizar</button></td></tr>"
+            document.getElementById("aca").innerHTML += "<tr id=" + i + "><th>" + String(i + 1) + "</th><td>" + datosParseados[i].nombre + "</td><td>" + datosParseados[i].email + "</td><td>" + datosParseados[i].phone +  "</td><td>" + datosParseados[i].genero + "</td><td><button class="+"'"+"buttonTable"+"'"+" id=" + i + " onclick=" + "'" + "borra(this.id)" + "'" + ">Delete</button><button class="+"'"+"buttonTable"+"'"+">"+"Actualizar</button></td></tr>"
         }
     }
 }
