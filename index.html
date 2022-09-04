@@ -28,69 +28,91 @@
     <!--Breve titulo-->
     <div class="jumbotron text-center">
         <h1 class="m-5">Crud App - Proyecto 2</h1>
+        <hr>
+        <h3 class="m-4">Descripición de la funcionalidad</h3>
+        <div class="explicativo">
+            <li>EL ingreso de los datos se efectua mediante el "formulario de ingreso"
+                ( los datos son guardados en el Windows Local Storage), y se verán reflejado en la tabla de
+                más abajo llamada "Tabla de datos".</li>           
+            <li>Los datos ingresados pueden ser eliminados presionando el boton Delete en la fila correspondiente</li>
+            <li>Los datos ingresados pueden ser actualizados, al presionar el botón actualizar se cargan en el formulario 
+                de ingreso, permitiendo modificar lo que necesite al presionar actualizar.
+            </li>
+            
+        </div>
     </div>
+    <hr>
+    <div>
+        <h3 class="text-center m-4">Formulario de Ingreso</h3>
+        <form class="margenes text-center" id="formulario">
 
-    <form class="margenes text-center" id="formulario">
-        <div class="form-group row my-auto">
-            <div class="col-12 col-lg-6">
-                <label class="m-2">Ingrese su nombre:</label>
-                <input class="form-control m-2" type="text" placeholder="Nombre" id="nombre" required />
-            </div>
-            <div class="col-12 col-lg-6">
-                <label class="m-2">Email:</label>
-            <input class="form-control m-2" type="email" placeholder="Email" id="email">
-            </div>
-        </div>
-
-        <div class="form-group row my-auto">
-
-            <div class="col-lg-6 my-auto">
-                <label class="m-2">Celular:</label>
-                <input class="form-control m-2" type="text" placeholder="Ingrese su telefono (569xxxxxxxx)"  id="phone">
+            <div class="form-group row my-auto">
+                <div class="col-12 col-lg-6">
+                    <label class="m-2">Ingrese su nombre:</label>
+                    <input class="form-control m-2" type="text" placeholder="Nombre" id="nombre" required />
+                </div>
+                <div class="col-12 col-lg-6">
+                    <label class="m-2">Email:</label>
+                    <input class="form-control m-2" type="email" placeholder="Email" id="email">
+                </div>
             </div>
 
-            <div class="col-lg-6 my-auto">
-                <label class="m-2">Ingrese su género:</label>
-            <select id="inputState" class="form-control m-2">
-                <option selected>Hombre</option>
-                <option>Mujer</option>
-            </select>
-            </div>
-        </div>
+            <div class="form-group row my-auto">
 
-        <div class="row">
-            <div class="col-6 text-end">
-                <button id="botonCambia" posicion="-1" update="0" type="button" onclick="create()" class="btn1 btn btn-primary">Create</button>
-            </div>
-            <div class="col-6 text-start">
-                <button type="button" onclick="reset()" class="btn btn-secondary">Cancel</button>
-            </div>
-        </div>
-    </form>
+                <div class="col-lg-6 my-auto">
+                    <label class="m-2">Celular:</label>
+                    <input class="form-control m-2" type="text" placeholder="Ingrese su telefono (569xxxxxxxx)"
+                        id="phone">
+                </div>
 
+                <div class="col-lg-6 my-auto">
+                    <label class="m-2">Ingrese su género:</label>
+                    <select id="inputState" class="form-control m-2">
+                        <option selected>Hombre</option>
+                        <option>Mujer</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6 text-end">
+                    <button id="botonCambia" posicion="-1" update="0" type="button" onclick="create()"
+                        class="btn1 btn btn-primary">Create</button>
+                </div>
+                <div class="col-6 text-start">
+                    <button type="button" onclick="reset()" class="btn btn-secondary">Cancel</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <hr>
 
     <!--Aca ira la tabla que lee los datos-->
-    <div class="m-1">
-        <table class="table table-sm table-striped" id="tabla">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Email</th>
-                <th scope="col">Telefono</th>
-                <th scope="col">Genero</th>
-                <th scope="col">Acción</th>
-              </tr>
-            </thead>
-            <tbody id="aca">
 
-              
-            </tbody>
-          </table>
+    <div>
+        <h3 class="text-center m-4">Tabla de datos</h3>
+        <div class="m-1">
+            <table class="table table-sm table-striped" id="tabla">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Genero</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="aca">
+
+
+                </tbody>
+            </table>
+        </div>
+
     </div>
-
-
-  
+    <hr>
     <!--Javascrip-->
     <script src="./static/script.js"></script>
     <!--Bootstrap-->
@@ -104,6 +126,13 @@
         integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
         crossorigin="anonymous"></script>
 
+
+
 </body>
+<footer>
+
+    <p>Página simple para efectuar una operación de CRUD - Página efectuada con mótivo del diplomado FullStack UDD</p>
+
+</footer>
 
 </html>

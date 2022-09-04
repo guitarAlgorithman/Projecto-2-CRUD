@@ -116,7 +116,8 @@ update=(id)=>{
         form['inputState'].value=datosParseado[id].genero; 
         sessionStorage.setItem("id",id)
         sessionStorage.setItem("update",true)
-
+        const boton = document.getElementById('botonCambia');   
+        boton.innerHTML="Actualizar";
     }
   
 }
