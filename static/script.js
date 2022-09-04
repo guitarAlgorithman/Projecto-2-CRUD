@@ -15,12 +15,32 @@ create = () => {
         location.reload()    
         return 0;
     }
+
+    //aca hay dos casos.. se actualiza o se crea un retgistrpo nuevo
+    if(sessionStorage.getItem("update")=="true"){
+        let guardados = localStorage.getItem("data");
+        let guardadosParseado = JSON.parse(guardados);
+        let aux=guardadosParseado[sessionStorage.getItem("id")]
+        aux.nombre=entrada.nombre;
+        aux.email=entrada.email;
+        aux.phone=entrada.phone;
+        aux.genero=entrada.genero;
+        guardadosParseado[sessionStorage.getItem("id")]=aux;
+        localStorage.setItem("data", JSON.stringify(guardadosParseado));
+        sessionStorage.setItem("update",false)
+        reset();
+        location.reload()
+        return 0;
+    }
+    else{
+        guardarData(entrada)
+        reset();
+        location.reload()
+        return 0;
+    }
     
-    //localStorage.setItem(String(localStorage.length+1),JSON.stringify(entrada));
-    guardarData(entrada)
-    reset();
-    location.reload()
-    return entrada;
+    
+
 }
 
 guardarData = (entrada) => {
@@ -28,26 +48,29 @@ guardarData = (entrada) => {
     let guardados = localStorage.getItem("data");
     if (!guardados) {
         localStorage.setItem("data", JSON.stringify([entrada]));
+       
 
     }
     else {
         let guardadosParseado = JSON.parse(guardados)
         guardadosParseado.push(entrada)
         localStorage.setItem("data", JSON.stringify(guardadosParseado));
+
     }
+    sessionStorage.setItem("update",false)
 
 }
 //Limpia el formulario
 reset = () => {
 
     document.getElementById('formulario').reset();
-    const boton = document.getElementsByClassName("btn1")
-    boton.innerHTML="Create";
+    sessionStorage.setItem("update",false)
+
 }
 
 // //Carga
 showAll = () => {
-
+    sessionStorage.setItem("update",false)
     //Obtengo los elementos del local storate
     let guardados = localStorage.getItem("data");
     if (guardados) {
@@ -74,6 +97,7 @@ function borra(id) {
         arr = datosParseado.filter(item => item !== datosParseado[parseInt(id)])
         localStorage.setItem("data", JSON.stringify(arr));        
     }
+    sessionStorage.setItem("update",false)
     location.reload()
 
 }
@@ -90,15 +114,13 @@ update=(id)=>{
         form['email'].value=datosParseado[id].email;
         form['phone'].value=datosParseado[id].phone;
         form['inputState'].value=datosParseado[id].genero; 
-        const boton = document.getElementById("botonCambia")
-        boton.innerHTML="Update";
-        boton.setAttribute("posicion",id)
+        sessionStorage.setItem("id",id)
+        sessionStorage.setItem("update",true)
 
     }
   
 }
 
-cargaActulizado(id)
 
 showAll()
 
