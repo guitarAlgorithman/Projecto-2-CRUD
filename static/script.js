@@ -9,37 +9,37 @@ create = () => {
         'genero': form['inputState'].value,
     }
     //Simple check de todo vacio
-    if(entrada.nombre=="" || entrada.email=="" || entrada.phone==""){
+    if (entrada.nombre == "" || entrada.email == "" || entrada.phone == "") {
         alert("Ingrese nombre, email y telefono ");
-        reset();
-        location.reload()    
-        return 0;
-    }
-
-    //aca hay dos casos.. se actualiza o se crea un retgistrpo nuevo
-    if(sessionStorage.getItem("update")=="true"){
-        let guardados = localStorage.getItem("data");
-        let guardadosParseado = JSON.parse(guardados);
-        let aux=guardadosParseado[sessionStorage.getItem("id")]
-        aux.nombre=entrada.nombre;
-        aux.email=entrada.email;
-        aux.phone=entrada.phone;
-        aux.genero=entrada.genero;
-        guardadosParseado[sessionStorage.getItem("id")]=aux;
-        localStorage.setItem("data", JSON.stringify(guardadosParseado));
-        sessionStorage.setItem("update",false)
         reset();
         location.reload()
         return 0;
     }
-    else{
+
+    //aca hay dos casos.. se actualiza o se crea un retgistrpo nuevo
+    if (sessionStorage.getItem("update") == "true") {
+        let guardados = localStorage.getItem("data");
+        let guardadosParseado = JSON.parse(guardados);
+        let aux = guardadosParseado[sessionStorage.getItem("id")]
+        aux.nombre = entrada.nombre;
+        aux.email = entrada.email;
+        aux.phone = entrada.phone;
+        aux.genero = entrada.genero;
+        guardadosParseado[sessionStorage.getItem("id")] = aux;
+        localStorage.setItem("data", JSON.stringify(guardadosParseado));
+        sessionStorage.setItem("update", false)
+        reset();
+        location.reload()
+        return 0;
+    }
+    else {
         guardarData(entrada)
         reset();
         location.reload()
         return 0;
     }
-    
-    
+
+
 
 }
 
@@ -48,7 +48,7 @@ guardarData = (entrada) => {
     let guardados = localStorage.getItem("data");
     if (!guardados) {
         localStorage.setItem("data", JSON.stringify([entrada]));
-       
+
 
     }
     else {
@@ -57,20 +57,20 @@ guardarData = (entrada) => {
         localStorage.setItem("data", JSON.stringify(guardadosParseado));
 
     }
-    sessionStorage.setItem("update",false)
+    sessionStorage.setItem("update", false)
 
 }
 //Limpia el formulario
 reset = () => {
 
     document.getElementById('formulario').reset();
-    sessionStorage.setItem("update",false)
+    sessionStorage.setItem("update", false)
 
 }
 
 // //Carga
 showAll = () => {
-    sessionStorage.setItem("update",false)
+    sessionStorage.setItem("update", false)
     //Obtengo los elementos del local storate
     let guardados = localStorage.getItem("data");
     if (guardados) {
@@ -79,10 +79,10 @@ showAll = () => {
         console.log(datosParseados);
         for (let i = 0; i < datosParseados.length; i++) {
             document.getElementById("aca").innerHTML += "<tr id=" + i + "><th>" + String(i + 1) +
-             "</th><td>" + datosParseados[i].nombre + "</td><td>" + datosParseados[i].email +
-              "</td><td>" + datosParseados[i].phone + "</td><td>" + datosParseados[i].genero +
-              "</td><td><button class=" + "'" + "buttonTable" + "'" + " id=" + i + " onclick=" +
-               "'" + "borra(this.id)" + "'" + ">Delete</button><button "+"id=" + "'" + i + "'" +" onclick=" + "'" + "update(this.id)" + "'" + ">" +
+                "</th><td>" + datosParseados[i].nombre + "</td><td>" + datosParseados[i].email +
+                "</td><td>" + datosParseados[i].phone + "</td><td>" + datosParseados[i].genero +
+                "</td><td><button class=" + "'" + "buttonTable" + "'" + " id=" + i + " onclick=" +
+                "'" + "borra(this.id)" + "'" + ">Delete</button><button " + "id=" + "'" + i + "'" + " onclick=" + "'" + "update(this.id)" + "'" + ">" +
                 "Update</button></td></tr>"
         }
     }
@@ -95,34 +95,34 @@ function borra(id) {
     if (guardados) {
         let datosParseado = JSON.parse(guardados);
         arr = datosParseado.filter(item => item !== datosParseado[parseInt(id)])
-        localStorage.setItem("data", JSON.stringify(arr));        
+        localStorage.setItem("data", JSON.stringify(arr));
     }
-    sessionStorage.setItem("update",false)
+    sessionStorage.setItem("update", false)
     location.reload()
 
 }
 
 
-update=(id)=>{
+update = (id) => {
     //Obtengo los datos desde el storage
     let guardados = localStorage.getItem("data");
     if (guardados) {
         let datosParseado = JSON.parse(guardados);
         //busco el elemento con el id
-        const form = document.getElementById('formulario');        
-        form['nombre'].value=datosParseado[id].nombre;
-        form['email'].value=datosParseado[id].email;
-        form['phone'].value=datosParseado[id].phone;
-        form['inputState'].value=datosParseado[id].genero; 
-        sessionStorage.setItem("id",id)
-        sessionStorage.setItem("update",true)
-        const boton = document.getElementById('botonCambia');   
-        boton.innerHTML="Update";
+        const form = document.getElementById('formulario');
+        form['nombre'].value = datosParseado[id].nombre;
+        form['email'].value = datosParseado[id].email;
+        form['phone'].value = datosParseado[id].phone;
+        form['inputState'].value = datosParseado[id].genero;
+        sessionStorage.setItem("id", id)
+        sessionStorage.setItem("update", true)
+        const boton = document.getElementById('botonCambia');
+        boton.innerHTML = "Update";
     }
-  
+
 }
 
 
-showAll()
+showAll();
 
 
