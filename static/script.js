@@ -83,7 +83,7 @@ showAll = () => {
               "</td><td>" + datosParseados[i].phone + "</td><td>" + datosParseados[i].genero +
               "</td><td><button class=" + "'" + "buttonTable" + "'" + " id=" + i + " onclick=" +
                "'" + "borra(this.id)" + "'" + ">Delete</button><button "+"id=" + "'" + i + "'" +" onclick=" + "'" + "update(this.id)" + "'" + ">" +
-                "Actualizar</button></td></tr>"
+                "Update</button></td></tr>"
         }
     }
 }
