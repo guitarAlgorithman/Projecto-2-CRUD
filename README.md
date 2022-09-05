@@ -3,7 +3,7 @@
 
 * [Info-General](#Info-General)
 * [Objetivo](#Objetivo)
-* [layout](#Layout)
+* [Layout](#Layout)
 * [Desarrollo](#Desarrollo)
 * [Commits](#Commits)
 * [Link](#Link)
@@ -14,20 +14,20 @@ El presente proyecto se enmarca en el programa FullStack y corresponde a la tare
 
 ## Objetivo
 
-Desarrollar una página web que permita ingresar datos, actualizarlos, visualizar y modificar.
+Desarrollar una página web que permita ingresar datos, actualizarlos, visualizarlos y modificarlos.
 
 ## Layout
 
 La página, como prototipo de layour está compuesto de la siguiente manera:
-1. Navbar con un logo
-2. Un Titulo simple
+1. Navbar con un logo (imagen cualquiera)
+2. Un Titulo simple y una descripción
 3. Un formulario donde se ingresa nombre, email, telefono y genero (todos como strng con el check solamente de que sea todo completado, excepto el genero)
 4. Una tabla que se autocompletara con el formulario y en cada fila vendra la opción de eliminar y actualizar (se cargará en el formulario de arriba)
 5. Un footer simple con un texto descriptivo
 
-Visualmente la idea es que fuera algo asi (es solo un bosquejo inicial):
+Visualmente la idea es que fuera algo así (es solo un bosquejo inicial):
 
-![Layour_Feo](./static/img/layout_feo.png.png)
+![Layour_Feo](./static/img/layout_feo.png)
 
 ## Detalles del desarrollo
 
