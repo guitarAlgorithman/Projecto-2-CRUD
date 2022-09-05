@@ -22,7 +22,7 @@ La página, como prototipo de layour está compuesto de la siguiente manera:
 1. Navbar con un logo
 2. Un Titulo simple
 3. Un formulario donde se ingresa nombre, email, telefono y genero (todos como strng con el check solamente de que sea todo completado, excepto el genero)
-4. Una tabla que se autocompletara con el formulario y en cada fila vendra la opción de eliminar y actualiza (se cargará en el formulario de arriba)
+4. Una tabla que se autocompletara con el formulario y en cada fila vendra la opción de eliminar y actualizar (se cargará en el formulario de arriba)
 5. Un footer simple con un texto descriptivo
 
 Visualmente la idea es que fuera algo asi (es solo un bosquejo inicial):

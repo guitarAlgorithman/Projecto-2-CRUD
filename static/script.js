@@ -117,7 +117,7 @@ update=(id)=>{
         sessionStorage.setItem("id",id)
         sessionStorage.setItem("update",true)
         const boton = document.getElementById('botonCambia');   
-        boton.innerHTML="Actualizar";
+        boton.innerHTML="Update";
     }
   
 }
