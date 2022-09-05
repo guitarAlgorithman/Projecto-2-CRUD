@@ -62,7 +62,8 @@ guardarData = (entrada) => {
 }
 //Limpia el formulario
 reset = () => {
-
+    const boton = document.getElementById('botonCambia');
+    boton.innerHTML = "Create";
     document.getElementById('formulario').reset();
     sessionStorage.setItem("update", false)
 
