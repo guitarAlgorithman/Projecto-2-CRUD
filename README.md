@@ -25,7 +25,9 @@ La página, como prototipo de layour está compuesto de la siguiente manera:
 4. Una tabla que se autocompletara con el formulario y en cada fila vendra la opción de eliminar y actualiza (se cargará en el formulario de arriba)
 5. Un footer simple con un texto descriptivo
 
-Visualmente la idea es que sea algo asi:
+Visualmente la idea es que fuera algo asi (es solo un bosquejo inicial):
+
+![Layour_Feo](./static/img/layout_feo.png.png)
 
 ## Detalles del desarrollo
 
