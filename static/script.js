@@ -58,14 +58,15 @@ guardarData = (entrada) => {
 
     }
     sessionStorage.setItem("update", false)
-
-}
-//Limpia el formulario
-reset = () => {
     const boton = document.getElementById('botonCambia');
     boton.innerHTML = "Create";
-    document.getElementById('formulario').reset();
+}
+//Limpia el formulario
+function reset() {
+     document.getElementById('formulario').reset();
     sessionStorage.setItem("update", false)
+    const boton = document.getElementById('botonCambia');
+    boton.innerHTML = "Create";
 
 }
 
@@ -77,7 +78,6 @@ showAll = () => {
     if (guardados) {
         //los parseo
         let datosParseados = JSON.parse(guardados);
-        console.log(datosParseados);
         for (let i = 0; i < datosParseados.length; i++) {
             document.getElementById("aca").innerHTML += "<tr id=" + i + "><th>" + String(i + 1) +
                 "</th><td>" + datosParseados[i].nombre + "</td><td>" + datosParseados[i].email +
@@ -103,6 +103,11 @@ function borra(id) {
 
 }
 
+clean=()=>{
+    reset();
+    location.reload()
+    return 0;
+}
 
 update = (id) => {
     //Obtengo los datos desde el storage
