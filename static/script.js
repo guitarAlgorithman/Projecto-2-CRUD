@@ -71,6 +71,7 @@ function reset() {
 }
 
 // //Carga
+
 showAll = () => {
     sessionStorage.setItem("update", false)
     //Obtengo los elementos del local storate
@@ -132,3 +133,4 @@ update = (id) => {
 showAll();
 
 
+/*Este código fue hecho por Gustavo Henriquez.. al parecer estan clonandome el proyecto*/
